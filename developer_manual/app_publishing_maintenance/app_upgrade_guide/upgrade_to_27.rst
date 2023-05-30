@@ -45,6 +45,7 @@ Added APIs
 * Added a new interface ``\OCP\BackgroundJob\IParallelAwareJob`` that ``\OCP\BackgroundJob\Job`` now implements. It can be used to allow specifying that multiple instances of a job should not be run at the same time. Also added ``\OCP\BackgroundJob\IJobList#hasReservedJob(?string $className = null)`` method to check the condition (`nextcloud/server#37835 <https://github.com/nextcloud/server/pull/37835>`_)
 * New property ``$actionLabel`` has been added to the ``\OCP\Files\Template\TemplateFileCreator`` class with a respective setter ``TemplateFileCreator::setActionLabel`` and getter ``TemplateFileCreator::getActionLabel``.  (`nextcloud/server#37929 <https://github.com/nextcloud/server/pull/37929>`_ + `nextcloud/server#37955 <https://github.com/nextcloud/server/pull/37955>`_)
 * A new interface ``\OCP\Group\Backend\ISearchableGroupBackend`` was added for group backends supporting new method ``searchInGroup`` to search among a group users in an efficient way. (`nextcloud/server#32866 <https://github.com/nextcloud/server/pull/32866>`_)
+* New method ``atomicRetry()`` as been added to the ``\OCP\AppFramework\Db\TTransactional`` trait as a wrapper around atomic() to retry database operations after a retryable exception like database deadlocks occurred (`nextcloud/server#38030 <https://github.com/nextcloud/server/pull/38030>`_)
 
 
 Deprecated APIs
